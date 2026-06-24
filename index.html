@@ -4,167 +4,189 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mediavine Activation Plan — Mile.tech</title>
-  <meta name="description" content="Batchwise activation plan for 245 Mediavine sites across 4 batches, prepared by Akshay (Mile.tech).">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
   <style>
-    /* ── Reset & Tokens ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #f4f6fa;
-      --surface:   #ffffff;
-      --surface2:  #f8fafc;
-      --border:    #e2e8f0;
-      --text:      #0f172a;
-      --muted:     #64748b;
-      --subtle:    #94a3b8;
-
-      --blue:      #3b82f6;
-      --blue-lt:   #eff6ff;
-      --indigo:    #6366f1;
-      --indigo-lt: #eef2ff;
-      --amber:     #f59e0b;
-      --amber-lt:  #fffbeb;
-      --orange:    #f97316;
-      --orange-lt: #fff7ed;
-      --red:       #ef4444;
-      --red-lt:    #fef2f2;
-      --green:     #10b981;
-      --green-lt:  #ecfdf5;
-
-      --shadow-sm: 0 1px 3px rgb(0 0 0/.06), 0 1px 2px rgb(0 0 0/.04);
-      --shadow:    0 4px 12px rgb(0 0 0/.07), 0 2px 4px rgb(0 0 0/.04);
-      --radius:    14px;
-      --radius-sm: 8px;
+      --bg:       #f4f6fa;
+      --surface:  #ffffff;
+      --surface2: #f8fafc;
+      --border:   #e2e8f0;
+      --text:     #0f172a;
+      --muted:    #64748b;
+      --subtle:   #94a3b8;
+      --orange:   #f97316;
+      --blue:     #3b82f6;
+      --red:      #dc2626;
+      --red-lt:   #fef2f2;
+      --shadow:   0 2px 8px rgb(0 0 0/.07);
     }
 
     [data-theme="dark"] {
-      --bg:        #0d1117;
-      --surface:   #161b22;
-      --surface2:  #1c2430;
-      --border:    #30363d;
-      --text:      #e6edf3;
-      --muted:     #8b949e;
-      --subtle:    #6e7681;
-      --blue-lt:   #1c2d3f;
-      --indigo-lt: #1e1f45;
-      --amber-lt:  #2d1f00;
-      --orange-lt: #2d1600;
-      --red-lt:    #2d0f0f;
-      --green-lt:  #0d2a1f;
+      --bg:       #0d1117;
+      --surface:  #161b22;
+      --surface2: #1c2430;
+      --border:   #30363d;
+      --text:     #e6edf3;
+      --muted:    #8b949e;
+      --subtle:   #6e7681;
+      --red-lt:   #2d0f0f;
     }
 
     body {
       font-family: 'Inter', system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
-      padding: 2rem 1rem 4rem;
+      padding: 2.5rem 1rem 5rem;
       min-height: 100vh;
-      transition: background .3s, color .3s;
+      transition: background .25s, color .25s;
     }
 
-    .wrap { max-width: 1080px; margin: 0 auto; }
+    .wrap { max-width: 860px; margin: 0 auto; }
 
-    /* ── Header ── */
+    /* Header */
     .page-header {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 2rem;
+      align-items: center;
+      margin-bottom: 2.25rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
     }
 
-    .page-header-text h1 {
+    .page-header h1 {
       font-family: 'Outfit', sans-serif;
-      font-size: 2rem;
+      font-size: 1.6rem;
       font-weight: 800;
       background: linear-gradient(130deg, #3b82f6, #8b5cf6);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .page-header-text p {
-      font-size: 0.875rem;
+    .page-header p {
+      font-size: .8rem;
       color: var(--muted);
-      margin-top: .35rem;
+      margin-top: .25rem;
     }
 
-    .header-controls {
-      display: flex;
-      gap: .5rem;
-      align-items: center;
-      flex-shrink: 0;
-    }
+    .hdr-actions { display: flex; gap: .5rem; }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: .45rem .9rem;
-      font-size: .82rem;
+      padding: .4rem .8rem;
+      font-size: .78rem;
       font-weight: 600;
-      border-radius: var(--radius-sm);
+      border-radius: 7px;
       border: 1px solid var(--border);
       background: var(--surface);
       color: var(--text);
       cursor: pointer;
-      transition: all .15s;
+      transition: background .15s;
     }
     .btn:hover { background: var(--surface2); }
-    .btn-primary { background: var(--blue); color: #fff; border-color: var(--blue); }
-    .btn-primary:hover { background: #2563eb; border-color: #2563eb; }
 
-    /* ── Stats Row ── */
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-      margin-bottom: 1.75rem;
-    }
-
-    .stat-card {
+    /* Accordion card */
+    .accord {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.1rem 1.3rem;
-      box-shadow: var(--shadow-sm);
-      position: relative;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
       overflow: hidden;
+      margin-bottom: 1.25rem;
     }
-    .stat-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 4px; height: 100%;
-      background: var(--blue);
+
+    .accord-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 1.4rem;
+      cursor: pointer;
+      user-select: none;
+      gap: 1rem;
     }
-    .stat-card.amber::before { background: var(--amber); }
-    .stat-card.orange::before { background: var(--orange); }
-    .stat-card.green::before  { background: var(--green); }
-    .stat-card.red::before    { background: var(--red); }
+    .accord-header:hover { background: var(--surface2); }
 
-    .stat-label { font-size: .75rem; color: var(--muted); font-weight: 500; margin-bottom: .35rem; }
-    .stat-val   { font-family: 'Outfit', sans-serif; font-size: 1.7rem; font-weight: 700; line-height: 1; }
-    .stat-sub   { font-size: .72rem; color: var(--subtle); margin-top: .3rem; }
+    .accord-header-left { display: flex; align-items: center; gap: .75rem; }
 
-    /* ── Approval Banner ── */
-    .approval-banner {
+    .dot {
+      width: 11px; height: 11px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .dot-orange { background: var(--orange); }
+    .dot-blue   { background: var(--blue); }
+
+    .accord-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .accord-tag {
+      font-size: .7rem;
+      font-weight: 600;
+      padding: .2rem .6rem;
+      border-radius: 999px;
+    }
+    .tag-orange { background: #fff7ed; color: var(--orange); }
+    .tag-blue   { background: #eff6ff; color: var(--blue); }
+
+    [data-theme="dark"] .tag-orange { background: #3d1f00; }
+    [data-theme="dark"] .tag-blue   { background: #1c2d3f; }
+
+    .accord-meta { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
+
+    .accord-count {
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .accord-rev {
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    .chevron {
+      color: var(--subtle);
+      font-size: 1rem;
+      transition: transform .25s;
+      flex-shrink: 0;
+    }
+    .accord.open .chevron { transform: rotate(180deg); }
+
+    .accord-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease-out, opacity .3s;
+      opacity: 0;
+      border-top: 1px solid transparent;
+    }
+    .accord.open .accord-body {
+      max-height: 20000px;
+      opacity: 1;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Approval section (always visible) */
+    .approval-section {
       background: var(--red-lt);
       border: 1.5px solid var(--red);
-      border-radius: var(--radius);
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 2rem;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
     }
 
-    .approval-banner-header {
+    .approval-header {
       display: flex;
       align-items: center;
-      gap: .6rem;
-      margin-bottom: .9rem;
+      gap: .7rem;
+      padding: 1.1rem 1.4rem .85rem;
+      border-bottom: 1px solid rgba(220,38,38,.2);
     }
 
-    .approval-banner-header h2 {
+    .approval-header h2 {
       font-family: 'Outfit', sans-serif;
       font-size: 1.05rem;
       font-weight: 700;
@@ -174,401 +196,163 @@
     .approval-pill {
       background: var(--red);
       color: #fff;
-      font-size: .7rem;
+      font-size: .65rem;
       font-weight: 700;
-      padding: .2rem .55rem;
+      padding: .18rem .5rem;
       border-radius: 999px;
-      letter-spacing: .04em;
+      letter-spacing: .05em;
       text-transform: uppercase;
+      flex-shrink: 0;
     }
 
-    .approval-question {
+    .approval-q {
+      margin: .75rem 1.4rem 1rem;
+      padding: .85rem 1rem;
       background: var(--surface);
       border-left: 4px solid var(--red);
-      padding: .85rem 1rem;
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      margin-bottom: .75rem;
+      border-radius: 0 8px 8px 0;
       font-size: .9rem;
       font-weight: 600;
-    }
-
-    .approval-note {
-      font-size: .82rem;
-      color: var(--muted);
-      margin-bottom: .75rem;
-    }
-
-    .already-live-toggle {
-      display: inline-flex;
-      align-items: center;
-      gap: .4rem;
-      font-size: .8rem;
-      font-weight: 600;
-      color: var(--red);
-      cursor: pointer;
-      padding: .35rem .75rem;
-      border: 1px solid var(--red);
-      border-radius: var(--radius-sm);
-      background: transparent;
-      transition: all .15s;
-    }
-    .already-live-toggle:hover { background: var(--red); color: #fff; }
-    .already-live-list {
-      display: none;
-      margin-top: .75rem;
-      background: var(--surface);
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border);
-      overflow: hidden;
-    }
-    .already-live-list.open { display: block; }
-
-    /* ── Section Divider ── */
-    .section-label {
-      display: flex;
-      align-items: center;
-      gap: .75rem;
-      margin-bottom: 1rem;
-    }
-    .section-label-text {
-      font-family: 'Outfit', sans-serif;
-      font-size: .8rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .section-label-text.urgent { color: var(--orange); }
-    .section-label-text.next   { color: var(--blue); }
-    .section-label-line { flex: 1; height: 1px; background: var(--border); }
-    .section-label-date {
-      font-size: .75rem;
-      font-weight: 600;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-
-    /* ── Batch Cards ── */
-    .batch-cards { display: grid; gap: 1rem; margin-bottom: 2rem; }
-
-    .batch-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-sm);
-      overflow: hidden;
-      transition: box-shadow .2s;
-    }
-    .batch-card:hover { box-shadow: var(--shadow); }
-
-    .batch-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.1rem 1.4rem;
-      cursor: pointer;
-      user-select: none;
-      gap: 1rem;
-    }
-
-    .batch-card-header:hover { background: var(--surface2); }
-
-    .batch-card-left {
-      display: flex;
-      align-items: center;
-      gap: .85rem;
-    }
-
-    .batch-dot {
-      width: 11px; height: 11px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-    .batch-dot.b3 { background: var(--orange); }
-    .batch-dot.b4 { background: var(--amber); }
-    .batch-dot.b1 { background: var(--blue); }
-    .batch-dot.b2 { background: var(--indigo); }
-
-    .batch-name {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-    }
-
-    .batch-tag {
-      font-size: .72rem;
-      font-weight: 600;
-      padding: .2rem .6rem;
-      border-radius: 999px;
-    }
-    .batch-tag.b3 { background: var(--orange-lt); color: var(--orange); }
-    .batch-tag.b4 { background: var(--amber-lt);  color: var(--amber); }
-    .batch-tag.b1 { background: var(--blue-lt);   color: var(--blue); }
-    .batch-tag.b2 { background: var(--indigo-lt); color: var(--indigo); }
-
-    .batch-card-right {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      flex-shrink: 0;
-    }
-
-    .batch-stats {
-      text-align: right;
-    }
-    .batch-stats .bs-count {
-      font-size: .78rem;
-      font-weight: 600;
-      color: var(--muted);
-    }
-    .batch-stats .bs-rev {
-      font-size: .82rem;
-      font-weight: 700;
       color: var(--text);
     }
 
-    .chevron {
-      color: var(--subtle);
-      font-size: 1.1rem;
-      transition: transform .25s;
-    }
-    .batch-card.open .chevron { transform: rotate(180deg); }
-
-    .batch-body {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .3s ease-out, opacity .3s;
-      opacity: 0;
-      border-top: 1px solid transparent;
-    }
-    .batch-card.open .batch-body {
-      max-height: 6000px;
-      opacity: 1;
-      border-top: 1px solid var(--border);
-    }
-
-    /* ── Table ── */
+    /* Table */
     .table-wrap { overflow-x: auto; }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: .875rem;
-    }
+    table { width: 100%; border-collapse: collapse; font-size: .875rem; }
 
     thead th {
       background: var(--surface2);
       color: var(--muted);
-      font-size: .7rem;
+      font-size: .68rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: .06em;
-      padding: .65rem 1rem;
+      padding: .6rem 1rem;
       text-align: left;
       border-bottom: 1px solid var(--border);
     }
-    thead th.rev { text-align: right; }
+    th.rev, td.rev { text-align: right; }
+    th.batch-col, td.batch-col { text-align: center; }
 
-    tbody tr { transition: background .1s; }
     tbody tr:hover td { background: var(--surface2); }
     tbody tr:last-child td { border-bottom: none; }
 
     td {
-      padding: .65rem 1rem;
+      padding: .6rem 1rem;
       border-bottom: 1px solid var(--border);
       vertical-align: middle;
     }
 
-    .td-num { color: var(--subtle); font-size: .78rem; width: 44px; }
+    .td-num { color: var(--subtle); font-size: .75rem; width: 40px; }
+
     .td-domain a {
       font-weight: 600;
       color: var(--blue);
       text-decoration: none;
     }
     .td-domain a:hover { text-decoration: underline; }
-    .td-rev {
-      text-align: right;
+
+    td.rev {
       font-variant-numeric: tabular-nums;
       font-weight: 500;
     }
 
-    /* ── Search ── */
-    .search-wrap {
-      position: relative;
-      margin-bottom: 1.5rem;
-    }
-    .search-wrap input {
-      width: 100%;
-      padding: .7rem 1rem .7rem 2.6rem;
-      font-size: .9rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      background: var(--surface);
-      color: var(--text);
-      outline: none;
-      transition: border .2s, box-shadow .2s;
-    }
-    .search-wrap input:focus {
-      border-color: var(--blue);
-      box-shadow: 0 0 0 3px rgba(59,130,246,.15);
-    }
-    .search-icon {
-      position: absolute;
-      left: .85rem;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--subtle);
-      pointer-events: none;
-      font-size: 1rem;
-    }
-
-    /* ── Timeline Card ── */
-    .timeline-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem 1.5rem;
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 2rem;
-    }
-
-    .timeline-card h3 {
-      font-family: 'Outfit', sans-serif;
-      font-size: .9rem;
+    .batch-badge {
+      display: inline-block;
+      font-size: .68rem;
       font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      color: var(--muted);
-      margin-bottom: 1rem;
+      padding: .15rem .45rem;
+      border-radius: 5px;
     }
+    .b3-badge { background: #fff7ed; color: var(--orange); }
+    .b4-badge { background: #fefce8; color: #b45309; }
+    .b1-badge { background: #eff6ff; color: var(--blue); }
+    .b2-badge { background: #eef2ff; color: #4f46e5; }
 
-    .timeline-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: .85rem;
-    }
-
-    .timeline-step {
-      border-left: 3px solid var(--border);
-      padding-left: .85rem;
-    }
-    .timeline-step.urgent { border-left-color: var(--orange); }
-    .timeline-step.next   { border-left-color: var(--blue); }
-
-    .ts-label {
-      font-size: .7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      color: var(--muted);
-      margin-bottom: .2rem;
-    }
-    .ts-title {
-      font-weight: 600;
-      font-size: .88rem;
-      margin-bottom: .15rem;
-    }
-    .ts-desc { font-size: .78rem; color: var(--muted); }
-
-    /* ── Print ── */
-    .print-only { display: none; }
+    [data-theme="dark"] .b3-badge { background: #3d1f00; }
+    [data-theme="dark"] .b4-badge { background: #2d2000; }
+    [data-theme="dark"] .b1-badge { background: #1c2d3f; }
+    [data-theme="dark"] .b2-badge { background: #1e1f45; }
 
     @media print {
       body { background: #fff !important; color: #000 !important; padding: 0; }
       .no-print { display: none !important; }
-      .print-only { display: block !important; }
-      .batch-body {
-        max-height: none !important;
-        opacity: 1 !important;
-        border-top: 1px solid #ccc !important;
-        display: block !important;
-      }
-      .already-live-list { display: block !important; }
-      .batch-card { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
-      .batch-card-header:hover { background: none; }
-      .print-break { page-break-before: always; }
+      .accord-body { max-height: none !important; opacity: 1 !important; border-top: 1px solid #ddd !important; }
+      .accord { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+      .chevron { display: none; }
     }
 
-    /* ── Responsive ── */
-    @media (max-width: 640px) {
-      .page-header { flex-direction: column; }
-      .batch-card-right { flex-direction: column; align-items: flex-end; gap: .4rem; }
-      .stats-row { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 600px) {
+      .accord-meta { gap: .5rem; }
+      .accord-rev  { display: none; }
     }
   </style>
 </head>
 <body>
 <div class="wrap">
 
-  <!-- Print header (hidden on screen) -->
-  <div class="print-only" style="margin-bottom:1.5rem; border-bottom:2px solid #333; padding-bottom:.75rem;">
-    <h1 style="font-size:22pt; font-family:Georgia,serif;">Mediavine Activation Plan</h1>
-    <p style="font-size:10pt; color:#555; margin-top:.3rem;">
-      Prepared by: Akshay (Mile.tech) &nbsp;|&nbsp; CC: Ramaswamy, Abhinav &nbsp;|&nbsp; Generated: June 24, 2026
-    </p>
-  </div>
-
-  <!-- Page Header -->
+  <!-- Header -->
   <div class="page-header no-print">
-    <div class="page-header-text">
+    <div>
       <h1>Mediavine Activation Plan</h1>
-      <p>Prepared by Akshay &nbsp;·&nbsp; CC: Ramaswamy, Abhinav &nbsp;·&nbsp; June 24, 2026</p>
+      <p>Prepared by Akshay · CC: Ramaswamy, Abhinav · June 24, 2026</p>
     </div>
-    <div class="header-controls">
-      <button class="btn" id="btn-theme">🌙 Dark</button>
-      <button class="btn btn-primary" id="btn-pdf">⬇ Export PDF</button>
-    </div>
-  </div>
-
-  <!-- Stats Row -->
-  <div class="stats-row">
-    <div class="stat-card orange">
-      <div class="stat-label">Go-Live Thursday</div>
-      <div class="stat-val" id="stat-b34-count">—</div>
-      <div class="stat-sub">Batch 3 &amp; 4 &nbsp;·&nbsp; Revenue: <span id="stat-b34-rev">—</span></div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">Go-Live Monday</div>
-      <div class="stat-val" id="stat-b12-count">—</div>
-      <div class="stat-sub">Batch 1 &amp; 2 &nbsp;·&nbsp; Revenue: <span id="stat-b12-rev">—</span></div>
-    </div>
-    <div class="stat-card green">
-      <div class="stat-label">Already Live (Retrain)</div>
-      <div class="stat-val" id="stat-live-count">—</div>
-      <div class="stat-sub">Requires approval &nbsp;·&nbsp; Revenue: <span id="stat-live-rev">—</span></div>
-    </div>
-    <div class="stat-card amber">
-      <div class="stat-label">Total Sites</div>
-      <div class="stat-val" id="stat-total">—</div>
-      <div class="stat-sub">Across all 4 batches + retrain</div>
+    <div class="hdr-actions">
+      <button class="btn" id="btn-theme">🌙</button>
+      <button class="btn" id="btn-pdf">⬇ PDF</button>
     </div>
   </div>
 
-  <!-- ⚠️ Approval Required Banner -->
-  <div class="approval-banner">
-    <div class="approval-banner-header">
-      <span style="font-size:1.3rem;">⚠️</span>
+  <!-- ① Batch 3 & 4 -->
+  <div class="accord open" id="card-34">
+    <div class="accord-header">
+      <div class="accord-header-left">
+        <div class="dot dot-orange"></div>
+        <span class="accord-title">Batch 3 &amp; 4</span>
+        <span class="accord-tag tag-orange">Go Live Thursday, June 26</span>
+      </div>
+      <div class="accord-meta">
+        <span class="accord-count" id="count-34">120 sites</span>
+        <span class="accord-rev" id="rev-34"></span>
+        <span class="chevron">▼</span>
+      </div>
+    </div>
+    <div class="accord-body">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="td-num">#</th>
+              <th>Domain</th>
+              <th class="rev">Revenue</th>
+              <th class="batch-col">Batch</th>
+            </tr>
+          </thead>
+          <tbody id="table-34"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ② Approval Required -->
+  <div class="approval-section">
+    <div class="approval-header">
+      <span style="font-size:1.2rem;">⚠️</span>
       <h2>Approval Required — Already Live Domains</h2>
       <span class="approval-pill">Action Needed</span>
     </div>
-
-    <div class="approval-question">
-      Do we have approval to retrain the <strong id="live-domain-count">39</strong> domains that are already live in Batch 3 and Batch 4?
+    <div class="approval-q">
+      Do we have approval to retrain the <strong>39 domains</strong> that are already live on Mediavine?<br>
+      <span style="font-weight:400; font-size:.85rem; color:var(--muted);">These must be coordinated with Mediavine — they will not want to run without floors during the switchover.</span>
     </div>
-
-    <p class="approval-note">
-      These domains are currently live on Mediavine. Retraining them requires coordination — Mediavine will not want to run without floors. We must confirm approval and synchronise our go-live with their floor disable.
-    </p>
-
-    <button class="already-live-toggle" id="toggle-live">▼ Show <span id="live-count-label">39</span> Already-Live Domains</button>
-
-    <div class="already-live-list" id="live-list-wrap">
+    <div class="table-wrap">
       <table>
         <thead>
           <tr>
-            <th style="width:44px;">#</th>
+            <th class="td-num">#</th>
             <th>Domain</th>
-            <th class="rev">SUM of Revenue</th>
+            <th class="rev">Revenue</th>
           </tr>
         </thead>
         <tbody id="table-live"></tbody>
@@ -576,400 +360,211 @@
     </div>
   </div>
 
-  <!-- Timeline -->
-  <div class="timeline-card no-print">
-    <h3>Activation Timeline</h3>
-    <div class="timeline-steps">
-      <div class="timeline-step urgent">
-        <div class="ts-label">Step 1 · Now</div>
-        <div class="ts-title">Start Training</div>
-        <div class="ts-desc">Initiate training for Batch 3, 4 &amp; Already-Live retrain queue.</div>
+  <!-- ③ Batch 1 & 2 -->
+  <div class="accord" id="card-12">
+    <div class="accord-header">
+      <div class="accord-header-left">
+        <div class="dot dot-blue"></div>
+        <span class="accord-title">Batch 1 &amp; 2</span>
+        <span class="accord-tag tag-blue">Go Live Monday, June 29</span>
       </div>
-      <div class="timeline-step urgent">
-        <div class="ts-label">Step 2 · Thursday, June 26</div>
-        <div class="ts-title">Test &amp; Validate</div>
-        <div class="ts-desc">Get Mediavine test page from Ari. Validate before activation.</div>
+      <div class="accord-meta">
+        <span class="accord-count" id="count-12">125 sites</span>
+        <span class="accord-rev" id="rev-12"></span>
+        <span class="chevron">▼</span>
       </div>
-      <div class="timeline-step urgent">
-        <div class="ts-label">Step 3 · Thursday, June 26</div>
-        <div class="ts-title">Batch 3 &amp; 4 Go Live</div>
-        <div class="ts-desc">120 bottom-revenue sites live. Floor handoff co-ordinated with Ari/Mediavine.</div>
-      </div>
-      <div class="timeline-step next">
-        <div class="ts-label">Step 4 · Monday, June 29</div>
-        <div class="ts-title">Batch 1 &amp; 2 Go Live</div>
-        <div class="ts-desc">125 top-revenue sites live. Full activation complete.</div>
+    </div>
+    <div class="accord-body">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="td-num">#</th>
+              <th>Domain</th>
+              <th class="rev">Revenue</th>
+              <th class="batch-col">Batch</th>
+            </tr>
+          </thead>
+          <tbody id="table-12"></tbody>
+        </table>
       </div>
     </div>
   </div>
 
-  <!-- Search -->
-  <div class="search-wrap no-print">
-    <span class="search-icon">🔍</span>
-    <input type="text" id="search" placeholder="Search any domain across all batches…">
-  </div>
-
-  <!-- ── THIS THURSDAY ── -->
-  <div class="section-label">
-    <span class="section-label-text urgent">🔴 This Thursday</span>
-    <div class="section-label-line"></div>
-    <span class="section-label-date">June 26, 2026 — Bottom 120 Sites by Revenue</span>
-  </div>
-
-  <div class="batch-cards" id="thursday-section">
-    <!-- Batch 3 -->
-    <div class="batch-card open" id="card-3">
-      <div class="batch-card-header" data-target="card-3">
-        <div class="batch-card-left">
-          <div class="batch-dot b3"></div>
-          <span class="batch-name">Batch 3</span>
-          <span class="batch-tag b3">Go Live Thursday</span>
-        </div>
-        <div class="batch-card-right">
-          <div class="batch-stats">
-            <div class="bs-count" id="hdr-b3">— sites</div>
-            <div class="bs-rev" id="rev-b3">—</div>
-          </div>
-          <span class="chevron">▼</span>
-        </div>
-      </div>
-      <div class="batch-body">
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr><th style="width:44px;">#</th><th>Domain</th><th class="rev">Revenue</th></tr>
-            </thead>
-            <tbody id="table-b3"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <!-- Batch 4 -->
-    <div class="batch-card" id="card-4">
-      <div class="batch-card-header" data-target="card-4">
-        <div class="batch-card-left">
-          <div class="batch-dot b4"></div>
-          <span class="batch-name">Batch 4</span>
-          <span class="batch-tag b4">Go Live Thursday</span>
-        </div>
-        <div class="batch-card-right">
-          <div class="batch-stats">
-            <div class="bs-count" id="hdr-b4">— sites</div>
-            <div class="bs-rev" id="rev-b4">—</div>
-          </div>
-          <span class="chevron">▼</span>
-        </div>
-      </div>
-      <div class="batch-body">
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr><th style="width:44px;">#</th><th>Domain</th><th class="rev">Revenue</th></tr>
-            </thead>
-            <tbody id="table-b4"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── NEXT MONDAY ── -->
-  <div class="section-label print-break">
-    <span class="section-label-text next">🔵 Next Monday</span>
-    <div class="section-label-line"></div>
-    <span class="section-label-date">June 29, 2026 — Top 125 Sites by Revenue</span>
-  </div>
-
-  <div class="batch-cards" id="monday-section">
-    <!-- Batch 1 -->
-    <div class="batch-card" id="card-1">
-      <div class="batch-card-header" data-target="card-1">
-        <div class="batch-card-left">
-          <div class="batch-dot b1"></div>
-          <span class="batch-name">Batch 1</span>
-          <span class="batch-tag b1">Go Live Monday</span>
-        </div>
-        <div class="batch-card-right">
-          <div class="batch-stats">
-            <div class="bs-count" id="hdr-b1">— sites</div>
-            <div class="bs-rev" id="rev-b1">—</div>
-          </div>
-          <span class="chevron">▼</span>
-        </div>
-      </div>
-      <div class="batch-body">
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr><th style="width:44px;">#</th><th>Domain</th><th class="rev">Revenue</th></tr>
-            </thead>
-            <tbody id="table-b1"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <!-- Batch 2 -->
-    <div class="batch-card" id="card-2">
-      <div class="batch-card-header" data-target="card-2">
-        <div class="batch-card-left">
-          <div class="batch-dot b2"></div>
-          <span class="batch-name">Batch 2</span>
-          <span class="batch-tag b2">Go Live Monday</span>
-        </div>
-        <div class="batch-card-right">
-          <div class="batch-stats">
-            <div class="bs-count" id="hdr-b2">— sites</div>
-            <div class="bs-rev" id="rev-b2">—</div>
-          </div>
-          <span class="chevron">▼</span>
-        </div>
-      </div>
-      <div class="batch-body">
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr><th style="width:44px;">#</th><th>Domain</th><th class="rev">Revenue</th></tr>
-            </thead>
-            <tbody id="table-b2"></tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div><!-- /wrap -->
+</div>
 
 <script>
-// ── DATA ──────────────────────────────────────────────────────────────────────
-const DATA = {
-  batch3: [
-    {d:"moribyan.com",r:8034.72},{d:"miljuschka.nl",r:7785.70},{d:"cruisewithleo.com",r:7780.05},
-    {d:"daisyfarmcrafts.com",r:7704.01},{d:"earthtrekkers.com",r:7672.53},{d:"theeverymom.com",r:7501.97},
-    {d:"cheekykitchen.com",r:7488.90},{d:"brooklynfarmgirl.com",r:7450.13},{d:"rasamalaysia.com",r:7349.46},
-    {d:"rockchasing.com",r:7346.50},{d:"shugarysweets.com",r:7296.46},{d:"honest-food.net",r:7265.38},
-    {d:"christieathome.com",r:7245.46},{d:"grillnationbbq.com",r:7167.30},{d:"thesimplicityhabit.com",r:7108.14},
-    {d:"easypeasyfoodie.com",r:6960.02},{d:"f4wonline.com",r:6876.05},{d:"moneyinc.com",r:6760.63},
-    {d:"asassyspoon.com",r:6753.10},{d:"bloomingbackyard.com",r:6745.19},{d:"thetoastykitchen.com",r:6686.60},
-    {d:"uitpaulineskeuken.nl",r:6666.39},{d:"severe-weather.eu",r:6655.84},{d:"onekindesign.com",r:6596.94},
-    {d:"nfltraderumors.co",r:6326.30},{d:"gisgeography.com",r:6304.60},{d:"butterwithasideofbread.com",r:6221.44},
-    {d:"ponly.com",r:6175.70},{d:"familyfreshmeals.com",r:6115.07},{d:"bontraveler.com",r:6010.57},
-    {d:"uncoveringflorida.com",r:5999.05},{d:"fooddolls.com",r:5960.62},{d:"iheartvegetables.com",r:5728.97},
-    {d:"allthings.how",r:5669.50},{d:"theirishroadtrip.com",r:5470.46},{d:"saltysidedish.com",r:5300.51},
-    {d:"theashleysrealityroundup.com",r:5060.11},{d:"mybartender.com",r:4997.50},{d:"lifeshehas.com",r:4781.30},
-    {d:"latenighter.com",r:4142.44},{d:"rvingknowhow.com",r:3969.97},{d:"holler.country",r:3638.68},
-    {d:"bestofarkansassports.com",r:3424.17},{d:"explore.com",r:3217.55},{d:"gimmesomegrilling.com",r:3174.65},
-    {d:"temperaturemaster.com",r:3104.75},{d:"sciencing.com",r:2929.56},{d:"olubunmimabel.com",r:2858.88},
-    {d:"thecoolist.com",r:2755.35},{d:"countrynow.com",r:2603.37},{d:"coinvaluechecker.com",r:2516.01},
-    {d:"helpfulprofessor.com",r:2387.22},{d:"thisismygarden.com",r:1882.09},{d:"mrguider.org",r:1720.98},
-    {d:"dayoutwiththekids.co.uk",r:1697.58},{d:"restaurantclicks.com",r:1653.42},{d:"gfloutdoors.com",r:1599.12},
-    {d:"cookwhatyoulove.com",r:1493.00},{d:"splashoftaste.com",r:1408.27},{d:"piacipizza.com",r:1266.51}
-  ],
-  batch4: [
-    {d:"inkandimaginings.com",r:1164.69},{d:"journeyjunket.com",r:1021.61},{d:"simplegardenlife.com",r:975.72},
-    {d:"makeyourmeals.com",r:965.74},{d:"cruise.blog",r:839.01},{d:"greatruns.com",r:775.11},
-    {d:"cheddarden.com",r:706.35},{d:"hvacseer.com",r:702.27},{d:"fooddrinklife.com",r:664.88},
-    {d:"kidsactivityzone.com",r:584.46},{d:"latestsightings.com",r:555.37},{d:"maketecheasier.com",r:454.40},
-    {d:"chefstandards.com",r:445.53},{d:"flawlesshair.com",r:405.32},{d:"playersbio.com",r:400.36},
-    {d:"thevessel.io",r:230.43},{d:"dogcarelife.com",r:227.10},{d:"icookfortwo.com",r:215.23},
-    {d:"ketocookingwins.com",r:214.32},{d:"muttergeist.de",r:203.22},{d:"pupvine.com",r:189.85},
-    {d:"asafacon.fr",r:155.59},{d:"thefarmgirlgabs.com",r:146.90},{d:"midlifehealthyliving.com",r:137.96},
-    {d:"animalko.com",r:133.87},{d:"wonderfullymadeanddearlyloved.com",r:92.54},{d:"tinybatchcooking.com",r:83.61},
-    {d:"projectnursery.com",r:66.32},{d:"whimsyandspice.com",r:59.14},{d:"experteditor.com.au",r:57.64},
-    {d:"happywhisker.com",r:42.16},{d:"bossladyfinance.com",r:33.49},{d:"theconsideredman.org",r:33.11},
-    {d:"southamericabackpacker.com",r:30.71},{d:"blackgirllostkeys.com",r:22.23},{d:"pavingplatform.com",r:21.93},
-    {d:"fitnesschat.co",r:21.46},{d:"physiqz.com",r:17.63},{d:"neverlikeditanyway.com",r:13.72},
-    {d:"celebritystyleguide.com",r:13.70},{d:"carfixboss.com",r:9.97},{d:"volgmama.nl",r:8.94},
-    {d:"humbleoven.com",r:8.77},{d:"doordodo.com",r:7.15},{d:"valenceelectrons.com",r:6.61},
-    {d:"girlmeetsfood.com",r:6.58},{d:"smaakvolnh.nl",r:6.26},{d:"litter-boxes.com",r:4.19},
-    {d:"forfreezing.com",r:3.92},{d:"fencefixation.com",r:3.29},{d:"thedirect.com",r:3.18},
-    {d:"pests101.com",r:2.95},{d:"meowhoo.com",r:2.93},{d:"alaska.blog",r:2.44},
-    {d:"fishbaron.com",r:1.89},{d:"moneymink.com",r:1.24},{d:"livesimplenow.com",r:0.96},
-    {d:"thestoicmindset.com",r:0.70},{d:"hamsters101.com",r:0.69},{d:"digstalk.com",r:0.07}
-  ],
-  batch1: [
-    {d:"spacedaily.com",r:271425.00},{d:"familydestinationsguide.com",r:135987.52},{d:"thecozycook.com",r:92245.04},
-    {d:"jalopnik.com",r:89898.88},{d:"saltandlavender.com",r:82383.68},{d:"gardenloversclub.com",r:67381.39},
-    {d:"legalclarity.org",r:57284.69},{d:"thechunkychef.com",r:54121.46},{d:"stroller-envy.com",r:51000.92},
-    {d:"tinygardenhabit.com",r:45719.68},{d:"simplehomeedit.com",r:43850.85},{d:"gardentabs.com",r:41412.19},
-    {d:"chowhound.com",r:39890.80},{d:"thedailymeal.com",r:37970.71},{d:"kristineskitchenblog.com",r:36762.14},
-    {d:"tamingtwins.com",r:36760.57},{d:"askchefdennis.com",r:36360.56},{d:"siliconcanals.com",r:34867.34},
-    {d:"farmhouseonboone.com",r:34746.38},{d:"uooz.com",r:34549.97},{d:"therealfooddietitians.com",r:34400.20},
-    {d:"insanelygoodrecipes.com",r:33804.47},{d:"everafterinthewoods.com",r:33065.21},{d:"obsessedwoodworking.com",r:32317.85},
-    {d:"leukerecepten.nl",r:29163.80},{d:"chilipeppermadness.com",r:28264.23},{d:"ruralsprout.com",r:27960.30},
-    {d:"stylecheer.com",r:27631.64},{d:"savorynothings.com",r:27442.62},{d:"headphonesty.com",r:26114.18},
-    {d:"homeviable.com",r:26105.82},{d:"melodyrepeat.com",r:24684.71},{d:"vehq.com",r:24449.22},
-    {d:"mondaymandala.com",r:24359.14},{d:"spaceshipsandlaserbeams.com",r:23321.99},{d:"mamaknowsglutenfree.com",r:22729.17},
-    {d:"looper.com",r:22497.10},{d:"homedit.com",r:22321.67},{d:"familyvacationsus.com",r:22078.27},
-    {d:"takingthekids.com",r:21848.44},{d:"animalsaroundtheglobe.com",r:20678.25},{d:"destinationlesstravel.com",r:20095.62},
-    {d:"imhungryforthat.com",r:20019.01},{d:"papillesetpupilles.fr",r:19752.44},{d:"mollyshomeguide.com",r:19692.49},
-    {d:"janespatisserie.com",r:19689.05},{d:"iwashyoudry.com",r:19521.22},{d:"comicbookmovie.com",r:18972.29},
-    {d:"homestratosphere.com",r:18128.26},{d:"nourishmovelove.com",r:18108.67},{d:"bowlofdelicious.com",r:17574.94},
-    {d:"oaksill.com",r:17382.48},{d:"belleofthekitchen.com",r:17372.12},{d:"africanbites.com",r:17067.39},
-    {d:"cookinginthemidwest.com",r:16921.48},{d:"eefkooktzo.nl",r:16834.65},{d:"wildbirdscoop.com",r:16238.03},
-    {d:"nourishyourglow.com",r:16215.99},{d:"bitesizedbash.com",r:15886.23},{d:"theeverygirl.com",r:15558.41},
-    {d:"nodashofgluten.com",r:15537.24},{d:"celebratingsweets.com",r:15362.06},{d:"anorganizedchaos.com",r:15139.16},
-    {d:"threadcurve.com",r:14949.35},{d:"crazyforcrust.com",r:14866.03}
-  ],
-  batch2: [
-    {d:"jessicainthekitchen.com",r:14692.26},{d:"liveeatlearn.com",r:14464.10},{d:"goodgoodgood.co",r:14458.92},
-    {d:"homedecorbliss.com",r:14446.33},{d:"kalejunkie.com",r:14040.06},{d:"runrepeat.com",r:13743.57},
-    {d:"politicalwire.com",r:13653.62},{d:"thetipsyhousewife.org",r:13649.82},{d:"theferventmama.com",r:13543.48},
-    {d:"creativebooster.net",r:13372.83},{d:"thenovicechefblog.com",r:13368.87},{d:"julieseatsandtreats.com",r:12978.92},
-    {d:"realityblurb.com",r:12716.44},{d:"andianne.com",r:12485.01},{d:"bookseriesinorder.com",r:12463.41},
-    {d:"boxlifemagazine.com",r:12462.58},{d:"wellmadebykiley.com",r:12378.67},{d:"mygolfspy.com",r:12317.70},
-    {d:"dishingouthealth.com",r:12091.00},{d:"40aprons.com",r:11854.88},{d:"corriecooks.com",r:11726.02},
-    {d:"traveloffpath.com",r:11539.99},{d:"laurasbakery.nl",r:11284.51},{d:"simplypsychology.org",r:11050.96},
-    {d:"db.pokemongohub.net",r:10893.20},{d:"barndominiumlife.com",r:10658.46},{d:"travelnicely.com",r:10519.45},
-    {d:"neurosciencenews.com",r:10494.80},{d:"fashionablylatemom.com",r:10391.91},{d:"hungryhuy.com",r:10339.66},
-    {d:"theroastedroot.net",r:10325.96},{d:"aldentediva.com",r:10314.51},{d:"southyourmouth.com",r:10266.18},
-    {d:"heartbeetkitchen.com",r:10203.96},{d:"moneydigest.com",r:10084.44},{d:"sixsistersstuff.com",r:10042.26},
-    {d:"preparetravelplans.com",r:9928.69},{d:"cookingformysoul.com",r:9781.79},{d:"soapsspoilers.com",r:9656.42},
-    {d:"royalcaribbeanblog.com",r:9519.25},{d:"myforkinglife.com",r:9447.31},{d:"skinnyspatula.com",r:9266.48},
-    {d:"gamerguides.com",r:9258.24},{d:"melissajorealrecipes.com",r:9255.76},{d:"zitatecke.de",r:9231.12},
-    {d:"thisisnotdietfood.com",r:9213.00},{d:"mybakingaddiction.com",r:9127.92},{d:"foodlovinfamily.com",r:9030.89},
-    {d:"immigrationnewscanada.ca",r:8931.44},{d:"fishmasters.com",r:8785.78},{d:"marriage.com",r:8656.49},
-    {d:"bakingmischief.com",r:8651.07},{d:"fitfoodiefinds.com",r:8582.70},{d:"mikeandlauratravel.com",r:8452.29},
-    {d:"cookingchew.com",r:8324.99},{d:"tornadoughalli.com",r:8308.58},{d:"theslowroasteditalian.com",r:8291.83},
-    {d:"staysnatched.com",r:8261.39},{d:"einfachmalene.de",r:8202.64},{d:"everythingjustbaked.com",r:8125.39}
-  ],
-  live: [
-    {d:"myfamilytravels.com",r:51211.51},{d:"afarmgirlskitchen.com",r:4436.51},{d:"ohmyveggies.com",r:1699.50},
-    {d:"mariasmixingbowl.com",r:1564.35},{d:"nourishandnestle.com",r:1553.68},{d:"reiseschmaus.de",r:1076.84},
-    {d:"thriftyhomesteader.com",r:780.64},{d:"therustyspoon.com",r:459.64},{d:"dishbyrish.co.uk",r:424.87},
-    {d:"bbq-nl.com",r:402.89},{d:"eliyaeats.com",r:401.96},{d:"afarmishkindoflife.com",r:235.29},
-    {d:"theholdernessfamily.com",r:208.68},{d:"soveryblessed.com",r:204.20},{d:"www.akitchenhoorsadventures.com",r:201.02},
-    {d:"poshpennies.com",r:200.90},{d:"containerwatergardens.net",r:177.74},{d:"serendipityandspice.com",r:156.65},
-    {d:"brightlighthub.com",r:142.06},{d:"nourishnutritionblog.com",r:134.42},{d:"moneyunder30.com",r:109.83},
-    {d:"insideofhappiness.com",r:97.19},{d:"hortzone.com",r:96.68},{d:"mstravelsolo.com",r:93.53},
-    {d:"headstuff.org",r:82.30},{d:"aboutsocialanxiety.com",r:80.45},{d:"bloomingnolwenn.com",r:59.07},
-    {d:"realityremake.com",r:54.85},{d:"middleeasy.com",r:53.35},{d:"careersherpa.net",r:33.90},
-    {d:"documentaryreviewers.com",r:30.71},{d:"almostlanding.com",r:21.27},{d:"traderie.com",r:3.98},
-    {d:"themodernnonna.com",r:0.01},{d:"julieblanner.com",r:0.00},{d:"minimizemymess.com",r:0.00},
-    {d:"thehollywoodgossip.com",r:0.00},{d:"strictlysardinia.com",r:0.00},{d:"mspoweruser.com",r:0.00}
-  ]
-};
-
-// ── Utilities ─────────────────────────────────────────────────────────────────
-const $ = id => document.getElementById(id);
 const fmt = v => new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2}).format(v);
 const sum = arr => arr.reduce((s,x)=>s+x.r,0);
+const $ = id => document.getElementById(id);
 
-// ── Render table ──────────────────────────────────────────────────────────────
-function renderTable(tbodyId, rows, isLive = false) {
+const B3 = [
+  {d:"moribyan.com",r:8034.72},{d:"miljuschka.nl",r:7785.70},{d:"cruisewithleo.com",r:7780.05},
+  {d:"daisyfarmcrafts.com",r:7704.01},{d:"earthtrekkers.com",r:7672.53},{d:"theeverymom.com",r:7501.97},
+  {d:"cheekykitchen.com",r:7488.90},{d:"brooklynfarmgirl.com",r:7450.13},{d:"rasamalaysia.com",r:7349.46},
+  {d:"rockchasing.com",r:7346.50},{d:"shugarysweets.com",r:7296.46},{d:"honest-food.net",r:7265.38},
+  {d:"christieathome.com",r:7245.46},{d:"grillnationbbq.com",r:7167.30},{d:"thesimplicityhabit.com",r:7108.14},
+  {d:"easypeasyfoodie.com",r:6960.02},{d:"f4wonline.com",r:6876.05},{d:"moneyinc.com",r:6760.63},
+  {d:"asassyspoon.com",r:6753.10},{d:"bloomingbackyard.com",r:6745.19},{d:"thetoastykitchen.com",r:6686.60},
+  {d:"uitpaulineskeuken.nl",r:6666.39},{d:"severe-weather.eu",r:6655.84},{d:"onekindesign.com",r:6596.94},
+  {d:"nfltraderumors.co",r:6326.30},{d:"gisgeography.com",r:6304.60},{d:"butterwithasideofbread.com",r:6221.44},
+  {d:"ponly.com",r:6175.70},{d:"familyfreshmeals.com",r:6115.07},{d:"bontraveler.com",r:6010.57},
+  {d:"uncoveringflorida.com",r:5999.05},{d:"fooddolls.com",r:5960.62},{d:"iheartvegetables.com",r:5728.97},
+  {d:"allthings.how",r:5669.50},{d:"theirishroadtrip.com",r:5470.46},{d:"saltysidedish.com",r:5300.51},
+  {d:"theashleysrealityroundup.com",r:5060.11},{d:"mybartender.com",r:4997.50},{d:"lifeshehas.com",r:4781.30},
+  {d:"latenighter.com",r:4142.44},{d:"rvingknowhow.com",r:3969.97},{d:"holler.country",r:3638.68},
+  {d:"bestofarkansassports.com",r:3424.17},{d:"explore.com",r:3217.55},{d:"gimmesomegrilling.com",r:3174.65},
+  {d:"temperaturemaster.com",r:3104.75},{d:"sciencing.com",r:2929.56},{d:"olubunmimabel.com",r:2858.88},
+  {d:"thecoolist.com",r:2755.35},{d:"countrynow.com",r:2603.37},{d:"coinvaluechecker.com",r:2516.01},
+  {d:"helpfulprofessor.com",r:2387.22},{d:"thisismygarden.com",r:1882.09},{d:"mrguider.org",r:1720.98},
+  {d:"dayoutwiththekids.co.uk",r:1697.58},{d:"restaurantclicks.com",r:1653.42},{d:"gfloutdoors.com",r:1599.12},
+  {d:"cookwhatyoulove.com",r:1493.00},{d:"splashoftaste.com",r:1408.27},{d:"piacipizza.com",r:1266.51}
+];
+
+const B4 = [
+  {d:"inkandimaginings.com",r:1164.69},{d:"journeyjunket.com",r:1021.61},{d:"simplegardenlife.com",r:975.72},
+  {d:"makeyourmeals.com",r:965.74},{d:"cruise.blog",r:839.01},{d:"greatruns.com",r:775.11},
+  {d:"cheddarden.com",r:706.35},{d:"hvacseer.com",r:702.27},{d:"fooddrinklife.com",r:664.88},
+  {d:"kidsactivityzone.com",r:584.46},{d:"latestsightings.com",r:555.37},{d:"maketecheasier.com",r:454.40},
+  {d:"chefstandards.com",r:445.53},{d:"flawlesshair.com",r:405.32},{d:"playersbio.com",r:400.36},
+  {d:"thevessel.io",r:230.43},{d:"dogcarelife.com",r:227.10},{d:"icookfortwo.com",r:215.23},
+  {d:"ketocookingwins.com",r:214.32},{d:"muttergeist.de",r:203.22},{d:"pupvine.com",r:189.85},
+  {d:"asafacon.fr",r:155.59},{d:"thefarmgirlgabs.com",r:146.90},{d:"midlifehealthyliving.com",r:137.96},
+  {d:"animalko.com",r:133.87},{d:"wonderfullymadeanddearlyloved.com",r:92.54},{d:"tinybatchcooking.com",r:83.61},
+  {d:"projectnursery.com",r:66.32},{d:"whimsyandspice.com",r:59.14},{d:"experteditor.com.au",r:57.64},
+  {d:"happywhisker.com",r:42.16},{d:"bossladyfinance.com",r:33.49},{d:"theconsideredman.org",r:33.11},
+  {d:"southamericabackpacker.com",r:30.71},{d:"blackgirllostkeys.com",r:22.23},{d:"pavingplatform.com",r:21.93},
+  {d:"fitnesschat.co",r:21.46},{d:"physiqz.com",r:17.63},{d:"neverlikeditanyway.com",r:13.72},
+  {d:"celebritystyleguide.com",r:13.70},{d:"carfixboss.com",r:9.97},{d:"volgmama.nl",r:8.94},
+  {d:"humbleoven.com",r:8.77},{d:"doordodo.com",r:7.15},{d:"valenceelectrons.com",r:6.61},
+  {d:"girlmeetsfood.com",r:6.58},{d:"smaakvolnh.nl",r:6.26},{d:"litter-boxes.com",r:4.19},
+  {d:"forfreezing.com",r:3.92},{d:"fencefixation.com",r:3.29},{d:"thedirect.com",r:3.18},
+  {d:"pests101.com",r:2.95},{d:"meowhoo.com",r:2.93},{d:"alaska.blog",r:2.44},
+  {d:"fishbaron.com",r:1.89},{d:"moneymink.com",r:1.24},{d:"livesimplenow.com",r:0.96},
+  {d:"thestoicmindset.com",r:0.70},{d:"hamsters101.com",r:0.69},{d:"digstalk.com",r:0.07}
+];
+
+const B1 = [
+  {d:"spacedaily.com",r:271425.00},{d:"familydestinationsguide.com",r:135987.52},{d:"thecozycook.com",r:92245.04},
+  {d:"jalopnik.com",r:89898.88},{d:"saltandlavender.com",r:82383.68},{d:"gardenloversclub.com",r:67381.39},
+  {d:"legalclarity.org",r:57284.69},{d:"thechunkychef.com",r:54121.46},{d:"stroller-envy.com",r:51000.92},
+  {d:"tinygardenhabit.com",r:45719.68},{d:"simplehomeedit.com",r:43850.85},{d:"gardentabs.com",r:41412.19},
+  {d:"chowhound.com",r:39890.80},{d:"thedailymeal.com",r:37970.71},{d:"kristineskitchenblog.com",r:36762.14},
+  {d:"tamingtwins.com",r:36760.57},{d:"askchefdennis.com",r:36360.56},{d:"siliconcanals.com",r:34867.34},
+  {d:"farmhouseonboone.com",r:34746.38},{d:"uooz.com",r:34549.97},{d:"therealfooddietitians.com",r:34400.20},
+  {d:"insanelygoodrecipes.com",r:33804.47},{d:"everafterinthewoods.com",r:33065.21},{d:"obsessedwoodworking.com",r:32317.85},
+  {d:"leukerecepten.nl",r:29163.80},{d:"chilipeppermadness.com",r:28264.23},{d:"ruralsprout.com",r:27960.30},
+  {d:"stylecheer.com",r:27631.64},{d:"savorynothings.com",r:27442.62},{d:"headphonesty.com",r:26114.18},
+  {d:"homeviable.com",r:26105.82},{d:"melodyrepeat.com",r:24684.71},{d:"vehq.com",r:24449.22},
+  {d:"mondaymandala.com",r:24359.14},{d:"spaceshipsandlaserbeams.com",r:23321.99},{d:"mamaknowsglutenfree.com",r:22729.17},
+  {d:"looper.com",r:22497.10},{d:"homedit.com",r:22321.67},{d:"familyvacationsus.com",r:22078.27},
+  {d:"takingthekids.com",r:21848.44},{d:"animalsaroundtheglobe.com",r:20678.25},{d:"destinationlesstravel.com",r:20095.62},
+  {d:"imhungryforthat.com",r:20019.01},{d:"papillesetpupilles.fr",r:19752.44},{d:"mollyshomeguide.com",r:19692.49},
+  {d:"janespatisserie.com",r:19689.05},{d:"iwashyoudry.com",r:19521.22},{d:"comicbookmovie.com",r:18972.29},
+  {d:"homestratosphere.com",r:18128.26},{d:"nourishmovelove.com",r:18108.67},{d:"bowlofdelicious.com",r:17574.94},
+  {d:"oaksill.com",r:17382.48},{d:"belleofthekitchen.com",r:17372.12},{d:"africanbites.com",r:17067.39},
+  {d:"cookinginthemidwest.com",r:16921.48},{d:"eefkooktzo.nl",r:16834.65},{d:"wildbirdscoop.com",r:16238.03},
+  {d:"nourishyourglow.com",r:16215.99},{d:"bitesizedbash.com",r:15886.23},{d:"theeverygirl.com",r:15558.41},
+  {d:"nodashofgluten.com",r:15537.24},{d:"celebratingsweets.com",r:15362.06},{d:"anorganizedchaos.com",r:15139.16},
+  {d:"threadcurve.com",r:14949.35},{d:"crazyforcrust.com",r:14866.03}
+];
+
+const B2 = [
+  {d:"jessicainthekitchen.com",r:14692.26},{d:"liveeatlearn.com",r:14464.10},{d:"goodgoodgood.co",r:14458.92},
+  {d:"homedecorbliss.com",r:14446.33},{d:"kalejunkie.com",r:14040.06},{d:"runrepeat.com",r:13743.57},
+  {d:"politicalwire.com",r:13653.62},{d:"thetipsyhousewife.org",r:13649.82},{d:"theferventmama.com",r:13543.48},
+  {d:"creativebooster.net",r:13372.83},{d:"thenovicechefblog.com",r:13368.87},{d:"julieseatsandtreats.com",r:12978.92},
+  {d:"realityblurb.com",r:12716.44},{d:"andianne.com",r:12485.01},{d:"bookseriesinorder.com",r:12463.41},
+  {d:"boxlifemagazine.com",r:12462.58},{d:"wellmadebykiley.com",r:12378.67},{d:"mygolfspy.com",r:12317.70},
+  {d:"dishingouthealth.com",r:12091.00},{d:"40aprons.com",r:11854.88},{d:"corriecooks.com",r:11726.02},
+  {d:"traveloffpath.com",r:11539.99},{d:"laurasbakery.nl",r:11284.51},{d:"simplypsychology.org",r:11050.96},
+  {d:"db.pokemongohub.net",r:10893.20},{d:"barndominiumlife.com",r:10658.46},{d:"travelnicely.com",r:10519.45},
+  {d:"neurosciencenews.com",r:10494.80},{d:"fashionablylatemom.com",r:10391.91},{d:"hungryhuy.com",r:10339.66},
+  {d:"theroastedroot.net",r:10325.96},{d:"aldentediva.com",r:10314.51},{d:"southyourmouth.com",r:10266.18},
+  {d:"heartbeetkitchen.com",r:10203.96},{d:"moneydigest.com",r:10084.44},{d:"sixsistersstuff.com",r:10042.26},
+  {d:"preparetravelplans.com",r:9928.69},{d:"cookingformysoul.com",r:9781.79},{d:"soapsspoilers.com",r:9656.42},
+  {d:"royalcaribbeanblog.com",r:9519.25},{d:"myforkinglife.com",r:9447.31},{d:"skinnyspatula.com",r:9266.48},
+  {d:"gamerguides.com",r:9258.24},{d:"melissajorealrecipes.com",r:9255.76},{d:"zitatecke.de",r:9231.12},
+  {d:"thisisnotdietfood.com",r:9213.00},{d:"mybakingaddiction.com",r:9127.92},{d:"foodlovinfamily.com",r:9030.89},
+  {d:"immigrationnewscanada.ca",r:8931.44},{d:"fishmasters.com",r:8785.78},{d:"marriage.com",r:8656.49},
+  {d:"bakingmischief.com",r:8651.07},{d:"fitfoodiefinds.com",r:8582.70},{d:"mikeandlauratravel.com",r:8452.29},
+  {d:"cookingchew.com",r:8324.99},{d:"tornadoughalli.com",r:8308.58},{d:"theslowroasteditalian.com",r:8291.83},
+  {d:"staysnatched.com",r:8261.39},{d:"einfachmalene.de",r:8202.64},{d:"everythingjustbaked.com",r:8125.39}
+];
+
+const LIVE = [
+  {d:"myfamilytravels.com",r:51211.51},{d:"afarmgirlskitchen.com",r:4436.51},{d:"ohmyveggies.com",r:1699.50},
+  {d:"mariasmixingbowl.com",r:1564.35},{d:"nourishandnestle.com",r:1553.68},{d:"reiseschmaus.de",r:1076.84},
+  {d:"thriftyhomesteader.com",r:780.64},{d:"therustyspoon.com",r:459.64},{d:"dishbyrish.co.uk",r:424.87},
+  {d:"bbq-nl.com",r:402.89},{d:"eliyaeats.com",r:401.96},{d:"afarmishkindoflife.com",r:235.29},
+  {d:"theholdernessfamily.com",r:208.68},{d:"soveryblessed.com",r:204.20},{d:"www.akitchenhoorsadventures.com",r:201.02},
+  {d:"poshpennies.com",r:200.90},{d:"containerwatergardens.net",r:177.74},{d:"serendipityandspice.com",r:156.65},
+  {d:"brightlighthub.com",r:142.06},{d:"nourishnutritionblog.com",r:134.42},{d:"moneyunder30.com",r:109.83},
+  {d:"insideofhappiness.com",r:97.19},{d:"hortzone.com",r:96.68},{d:"mstravelsolo.com",r:93.53},
+  {d:"headstuff.org",r:82.30},{d:"aboutsocialanxiety.com",r:80.45},{d:"bloomingnolwenn.com",r:59.07},
+  {d:"realityremake.com",r:54.85},{d:"middleeasy.com",r:53.35},{d:"careersherpa.net",r:33.90},
+  {d:"documentaryreviewers.com",r:30.71},{d:"almostlanding.com",r:21.27},{d:"traderie.com",r:3.98},
+  {d:"themodernnonna.com",r:0.01},{d:"julieblanner.com",r:0.00},{d:"minimizemymess.com",r:0.00},
+  {d:"thehollywoodgossip.com",r:0.00},{d:"strictlysardinia.com",r:0.00},{d:"mspoweruser.com",r:0.00}
+];
+
+// Render combined batch table (with batch label column)
+function renderCombined(tbodyId, lists, labels, badgeClasses) {
   const tbody = $(tbodyId);
-  if (!rows.length) {
-    tbody.innerHTML = `<tr><td colspan="3" style="text-align:center;color:var(--subtle);padding:1.5rem;">No matching domains.</td></tr>`;
-    return;
-  }
+  let rows = [];
+  lists.forEach((list, li) => {
+    list.forEach(item => rows.push({...item, label: labels[li], cls: badgeClasses[li]}));
+  });
   tbody.innerHTML = rows.map((row, i) => `
     <tr>
-      <td class="td-num">${i+1}</td>
+      <td class="td-num">${i + 1}</td>
       <td class="td-domain"><a href="https://${row.d}" target="_blank" rel="noopener">${row.d}</a></td>
-      <td class="td-rev">${fmt(row.r)}</td>
+      <td class="rev">${fmt(row.r)}</td>
+      <td class="batch-col"><span class="batch-badge ${row.cls}">${row.label}</span></td>
     </tr>`).join('');
 }
 
-// ── Update header stats ───────────────────────────────────────────────────────
-function updateHeaders(b1,b2,b3,b4,lv) {
-  $('hdr-b3').textContent = `${b3.length} sites`;
-  $('rev-b3').textContent  = fmt(sum(b3));
-  $('hdr-b4').textContent = `${b4.length} sites`;
-  $('rev-b4').textContent  = fmt(sum(b4));
-  $('hdr-b1').textContent = `${b1.length} sites`;
-  $('rev-b1').textContent  = fmt(sum(b1));
-  $('hdr-b2').textContent = `${b2.length} sites`;
-  $('rev-b2').textContent  = fmt(sum(b2));
+// Render live table (no batch column)
+function renderLive(tbodyId, list) {
+  const tbody = $(tbodyId);
+  tbody.innerHTML = list.map((row, i) => `
+    <tr>
+      <td class="td-num">${i + 1}</td>
+      <td class="td-domain"><a href="https://${row.d}" target="_blank" rel="noopener">${row.d}</a></td>
+      <td class="rev">${fmt(row.r)}</td>
+    </tr>`).join('');
 }
 
-// ── Initial render ────────────────────────────────────────────────────────────
-(function init() {
-  const {batch1:b1, batch2:b2, batch3:b3, batch4:b4, live:lv} = DATA;
+// Populate
+renderCombined('table-34', [B3, B4], ['Batch 3', 'Batch 4'], ['b3-badge', 'b4-badge']);
+renderCombined('table-12', [B1, B2], ['Batch 1', 'Batch 2'], ['b1-badge', 'b2-badge']);
+renderLive('table-live', LIVE);
 
-  // Stats row
-  $('stat-b34-count').textContent = b3.length + b4.length;
-  $('stat-b34-rev').textContent   = fmt(sum(b3)+sum(b4));
-  $('stat-b12-count').textContent = b1.length + b2.length;
-  $('stat-b12-rev').textContent   = fmt(sum(b1)+sum(b2));
-  $('stat-live-count').textContent = lv.length;
-  $('stat-live-rev').textContent   = fmt(sum(lv));
-  $('stat-total').textContent      = b1.length+b2.length+b3.length+b4.length+lv.length;
+$('count-34').textContent = `${B3.length + B4.length} sites`;
+$('rev-34').textContent   = fmt(sum(B3) + sum(B4));
+$('count-12').textContent = `${B1.length + B2.length} sites`;
+$('rev-12').textContent   = fmt(sum(B1) + sum(B2));
 
-  // Approval banner counts
-  $('live-domain-count').textContent = lv.length;
-  $('live-count-label').textContent  = lv.length;
-
-  // Tables
-  renderTable('table-b3', b3);
-  renderTable('table-b4', b4);
-  renderTable('table-b1', b1);
-  renderTable('table-b2', b2);
-  renderTable('table-live', lv, true);
-
-  updateHeaders(b1,b2,b3,b4,lv);
-})();
-
-// ── Toggles ───────────────────────────────────────────────────────────────────
-document.querySelectorAll('.batch-card-header').forEach(hdr => {
-  hdr.addEventListener('click', () => {
-    const card = $( hdr.dataset.target );
-    card.classList.toggle('open');
-  });
+// Accordion toggle
+document.querySelectorAll('.accord-header').forEach(hdr => {
+  hdr.addEventListener('click', () => hdr.closest('.accord').classList.toggle('open'));
 });
 
-// Already-live toggle
-$('toggle-live').addEventListener('click', () => {
-  const list = $('live-list-wrap');
-  const open = list.classList.toggle('open');
-  $('toggle-live').textContent = (open ? '▲ Hide' : '▼ Show') + ` ${DATA.live.length} Already-Live Domains`;
-});
-
-// ── Search ────────────────────────────────────────────────────────────────────
-$('search').addEventListener('input', e => {
-  const q = e.target.value.toLowerCase().trim();
-  const f = arr => q ? arr.filter(x => x.d.toLowerCase().includes(q)) : arr;
-
-  const fb3 = f(DATA.batch3), fb4 = f(DATA.batch4);
-  const fb1 = f(DATA.batch1), fb2 = f(DATA.batch2);
-  const flv = f(DATA.live);
-
-  renderTable('table-b3', fb3);
-  renderTable('table-b4', fb4);
-  renderTable('table-b1', fb1);
-  renderTable('table-b2', fb2);
-  renderTable('table-live', flv, true);
-  updateHeaders(fb1, fb2, fb3, fb4, flv);
-
-  // Auto-open cards that have matches when searching
-  if (q) {
-    ['card-3','card-4','card-1','card-2'].forEach((id, i) => {
-      const counts = [fb3.length, fb4.length, fb1.length, fb2.length];
-      $( id ).classList.toggle('open', counts[i] > 0);
-    });
-    if (flv.length > 0) $('live-list-wrap').classList.add('open');
-  }
-});
-
-// ── Theme toggle ──────────────────────────────────────────────────────────────
+// Theme
 const themeBtn = $('btn-theme');
 const saved = localStorage.getItem('mv-theme') || 'light';
 document.documentElement.setAttribute('data-theme', saved);
-themeBtn.textContent = saved === 'dark' ? '☀️ Light' : '🌙 Dark';
-
+themeBtn.textContent = saved === 'dark' ? '☀️' : '🌙';
 themeBtn.addEventListener('click', () => {
-  const cur = document.documentElement.getAttribute('data-theme');
-  const next = cur === 'dark' ? 'light' : 'dark';
+  const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
   document.documentElement.setAttribute('data-theme', next);
   localStorage.setItem('mv-theme', next);
-  themeBtn.textContent = next === 'dark' ? '☀️ Light' : '🌙 Dark';
+  themeBtn.textContent = next === 'dark' ? '☀️' : '🌙';
 });
 
-// ── PDF / Print ───────────────────────────────────────────────────────────────
+// PDF
 $('btn-pdf').addEventListener('click', () => {
-  // Expand everything before print
-  document.querySelectorAll('.batch-card').forEach(c => c.classList.add('open'));
-  $('live-list-wrap').classList.add('open');
+  document.querySelectorAll('.accord').forEach(c => c.classList.add('open'));
   setTimeout(() => window.print(), 180);
 });
 </script>
